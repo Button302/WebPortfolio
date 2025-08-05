@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Conversion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="Temp_Conversion_H1">Temperature Conversion</h1><hr>
+    
+    <form id="Temp_Conversion_Form">
+        <input type="number" id="Temp_Conversion_Text_Box" value="0"><br>
+
+        <input type="radio" id="Temp_Conversion_To_Fahrenheit" name="Temp_Conversion_unit">
+        <label for="Temp_Conversion_To_Fahrenheit" class="Temp_Conversion_Label">Celsius To Fahrenheit</label><br>
+
+        <input type="radio" id="Temp_Conversion_To_Celsius" name="Temp_Conversion_unit">
+        <label for="Temp_Conversion_To_Celsius" class="Temp_Conversion_Label">Fahrenheit To Celsius</label><br>
+
+        <button type="button" onclick="Convert()" id="Temp_Conversion_Btn">submit</button>
+        <p id="Temp_Conversion_Result" class="Temp_Conversion_Label">select a unit</p>
+    </form>
+
+    <script src="js/Temp_Conversion.js"></script>
+</body>
+</html>
