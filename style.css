@@ -11,8 +11,8 @@ h1{
     height: 75px;
     margin: 0 auto;
     display: flex;
-    justify-content: center; /* horizontal */
-    align-items: center;     /* vertical */
+    justify-content: center; 
+    align-items: center;     
     border-radius: 20px;
     box-shadow: 5px 5px 0px, -5px -5px 0px;
     -webkit-touch-callout: none;
@@ -67,17 +67,35 @@ hr{
     border-radius: 5px;;
     margin: 10px 10px;
 }
+#Back_Button{
+    font-size: 2.569em;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: hsl(0, 0%, 88%);
+    box-shadow: 4px 4px 0px black, -4px -4px 0px black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 10px;
+    float: left;;
+    height: 60px;
+    width: 130px;
+    font-weight: bold;
 
+}
 #Result{
     font-size: 3em;;
     font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+.project{
+    margin: 10px;
     text-align: center;
 }
 .project img{
     border: 3px solid hsl(0, 0%, 0%);
     width: 600px;
     border-radius: 20px;;
-    display:block;
     margin: 0 auto;
     box-shadow: 0px 0px 5px black;;
 }
@@ -244,7 +262,6 @@ hr{
     padding: 10px 15px;
     color: rgb(255, 255, 255);;
 }
-
 #Temp_Conversion_Btn:hover{
     background-color: hsl(32, 70%, 42%);
     color: rgb(218, 218, 218);;
@@ -326,4 +343,71 @@ hr{
     transform: scale(2);
     margin: 20px;
     cursor: pointer;
+}
+
+/* Binary Decode */
+#Binary_Decode_H1{
+    font-size: 3em;
+    width: 400px;
+}
+#Decode_Binary_Form {
+    background-color: hsl(36, 100%, 77%);
+    text-align: center;
+    max-width: 400px;
+    min-height: 500px; /* starts at 500px but can grow */
+    margin: auto;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px black;
+    border: 4px solid hsl(39, 100%, 50%);
+}
+
+#Decode_Binary_Text_Box{
+    min-height: 100px;
+    width: 300px;
+    font-size: 16px;
+    padding: 5px;
+    resize: none;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+#Decode_Binary_Btn{
+    font-size: 2em;
+    margin-top: 15px;
+    background-color: hsl(32, 90%, 49%);
+    border: 2px solid hsl(22, 100%, 50%);
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: rgb(255, 255, 255);
+}
+
+#Decode_Binary_Btn:hover{
+    background-color: hsl(32, 70%, 42%);
+    color: rgb(218, 218, 218);
+}
+
+#Decode_Binary_Result {
+    font-size: 1.7em;
+    font-weight: bold;
+    word-wrap: break-word;  /* breaks long words (like binary) */
+    overflow-wrap: break-word; /* modern version */
+    white-space: normal; /* ensures it wraps */
+}
+
+
+#Decode_Binary_Form label{
+    font-size: 2em;
+}
+
+#Decode_Binary_Form input[type="radio"]{
+    transform: scale(2);
+}
+.radio-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px;
 }

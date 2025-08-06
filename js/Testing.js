@@ -113,3 +113,85 @@ else{
 for(let i = 0; i <= 2; i++){
     console.log(i);
 }
+sum(displayConsole, 5,4);
+
+function sum(callback, x,y){
+    let result = x + y;
+    callback(result);
+}
+
+function displayConsole(result){
+    console.log(result);
+}
+
+
+let numberss = [1,2,3,4,5];
+numberss.forEach(double);
+
+
+function double(element, index, array){
+    array[index] = element * 2;
+}
+function display(element){
+    console.log(element);
+}
+
+function square(element, index, array){
+    return element * element;
+}
+
+const numbersss = [1,2,3,4,5];
+const squaredNumbers = numbersss.map(square);
+
+const students = ["Spongebob", "Patrick", "Squidward", "Sandy", "Mr. Krabs"];
+const studentsUpper = students.map(upperCase);
+
+console.log(studentsUpper);
+
+
+function upperCase(element){
+    return element.toUpperCase();
+}
+const dates = ["2022-09-019", "2022-10-12", "2022-11-15"];
+const formattedDates = dates.map(formatDate);
+console.log(formattedDates);
+function formatDate(element){
+    const parts = element.split('-');
+    return `${parts[2]/1}-${parts[1]}-${parts[0]}`;
+}
+
+let numberssss = [1,2,3,4,5];
+let evenNumbers = numberssss.filter(isEven)
+
+console.log(evenNumbers);
+function isEven(element){
+    return element % 2 === 0;
+}
+
+const prices = [10, 20, 30, 40, 50];
+
+const totalPrice = prices.reduce(sumPrice, 0);
+
+console.log(totalPrice);
+
+function sumPrice(accumulator, element){
+    return accumulator + element;
+}
+
+const HEllo = function(){
+   console.log('Hello'); 
+}
+
+// setTimeout(HEllo, 3000);
+
+const Person = {
+    FirstName: "Spongebob",
+    LastName: "Squarepants",
+    Age: 30,
+    IsEmployed: true,
+    sayHello: function(){console.log(`Hello, My Name Is ${this.FirstName}`)}
+
+}
+
+console.log(Person.FirstName);
+Person.sayHello()
