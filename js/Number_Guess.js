@@ -2,6 +2,7 @@ const minNum = 1;
 const maxNum = 100;
 
 document.getElementById("Number_Guess_start_btn").onclick = function() {
+    document.getElementById("number_guess_p").textContent = "Please enter a number between " + minNum + " and " + maxNum + ".";
     let randomNum = Math.floor(Math.random() * (maxNum - minNum + 1));
     document.getElementById("number_guess_btn").onclick = function() {
         let guess = document.getElementById("number_guess_input").value;
