@@ -1,3 +1,5 @@
+//thx for your guide code bro
+
 //console.log(`Hello, World!`); prints "Hello, World!" to the console
 
 // window.alert('Hello, World!'); this is pop up-up alert
@@ -184,6 +186,8 @@ const HEllo = function(){
 
 // setTimeout(HEllo, 3000);
 
+
+// This
 const Person = {
     FirstName: "Spongebob",
     LastName: "Squarepants",
@@ -195,3 +199,314 @@ const Person = {
 
 console.log(Person.FirstName);
 Person.sayHello()
+
+
+function Car(make, model, year,color){
+    this.Make = make;
+    this.Model = model;
+    this.Year = year;
+    this.Color = color;
+    this.drive = function(){console.log(`Youd drive the ${this.Make} ${this.Model} in ${this.Year} with a ${this.Color} color.`)};
+}
+
+const Car1 = new Car("Ford","Mustang",2024,"red")
+console.log(Car1.Make);
+console.log(Car1.Model);
+console.log(Car1.Year);
+console.log(Car1.Color);
+Car1.drive();
+// Classes
+class Products{
+    constructor(name,price){
+        this.name = name;
+        this.price = price;
+    }
+
+    displayProduct(){
+        console.log(`product ${this.name}`)
+        console.log(`Price $${this.price.toFixed(2)}`)
+    }
+
+    calculateTotal(salesTax){
+        return this.price +(this.price * salesTax);
+    }
+}
+const salesTax = 0.05;
+
+const product1 = new Products(`Shirt`,19.99);
+const product2 = new Products(`Pants`,22.90);
+const product3 = new Products(`Underwear`,100);
+
+product1.displayProduct();
+product2.displayProduct();
+product3.displayProduct();
+
+const total = product1.calculateTotal(salesTax)
+console.log(`Total Price (with tax): $${total.toFixed(2)}`)
+// Static
+class MathUtil{
+    static PI = 3.14159;
+    static getDiameter(radius){
+        return radius * 2;
+    }
+    static getCircumference(radius){
+        return 2 * this.PI *radius;
+    }
+    static getArea(radius){
+        return this.PI * radius * radius
+    }
+}
+console.log(MathUtil.PI);
+console.log(MathUtil.getDiameter(69));
+console.log(MathUtil.getCircumference(69));
+console.log(MathUtil.getArea(10))
+
+class User{
+    static user_count = 0;
+
+    constructor(username){
+        this.username = username;
+        User.user_count++;
+    }
+
+    static getUseCount(){
+        console.log(`There Are ${User.user_count} Users Online`)
+    }
+
+    sayHello(){
+        console.log(`Hello My User Name Is ${this.username}`)
+    }
+}
+
+const user1 = new User("Spongebob");
+const user2 = new User("Patrick");
+const user3 = new User("Sandy");
+
+user1.sayHello();
+
+User.getUseCount();
+
+console.log(user1.username)
+console.log(User.user_count)
+
+
+// inheritance
+class Animal{
+    alive = true;
+    eat(){
+        console.log(`This ${this.name} is Eating`)
+    }
+    sleep(){
+        console.log(`This ${this.name} is Sleeping`)
+    }
+}
+class Rabbit extends Animal{
+    name = `Rabbit`;
+
+    run(){
+        console.log(`Rabbit Is Running`)
+    }
+}
+class Fish extends Animal{
+    name = `Fish`;
+}
+
+const rabbit = new Rabbit();
+const fish = new Fish();
+
+console.log(fish.alive);
+rabbit.eat();
+rabbit.run();
+
+// Super = Keyword is used in classes to call the constructor or access the properties and methods of parent (superclass), this = this object, super = the parent
+class Animal2 {
+    constructor(name2,age2) {
+        this.name2 = name2;
+        this.age2 = age2;
+    }
+}
+
+class Rabbit2 extends Animal2 {
+    constructor(name2, age2, runSpeed2) {
+        super(name2,age2);
+        this.runSpeed2 = runSpeed2;
+    }
+}
+
+class Fish2 extends Animal2 {
+    constructor(name2, age2, swimSpeed2) {
+        super(name2,age2);
+        this.swimSpeed2 = swimSpeed2;
+    }
+}
+
+class Hawk2 extends Animal2 {
+    constructor(name2, age2, flySpeed2) {
+        super(name2,age2);
+        this.flySpeed2 = flySpeed2;
+    }
+}
+
+const myRabbit2 = new Rabbit2("Bunny", 1, 20);
+const myFish2   = new Fish2("Fish", 3, 15);
+const myHawk2   = new Hawk2("Hawk", 7, 50);
+
+console.log(myRabbit2.name2);
+
+
+// getter = special method that makes a property readable
+// setter = special method that makes a property writable
+
+//validate and modify a value when reading/writing a property
+class Rectangle{
+    
+    constructor(width, height){
+        this.width = width;
+        this.height = height;
+    }
+
+    set width(newWidth){
+        if(newWidth > 0){
+            this._width = newWidth;
+        }
+        else{
+            console.error(`Width Must Be A Positive Number`);
+        }
+    }
+    set height(newHeight){
+        if(newHeight > 0){
+            this._height = newHeight;
+        }
+        else{
+            console.error(`hHight Must Be A Positive Number`);
+        }
+    }
+
+    get width(){
+        return this._width;
+    }
+    get height(){
+        return this._height;
+    }
+    get area(){
+        return this._width * this._height;
+    }
+}
+
+const rectangle = new Rectangle(10,10);
+
+rectangle.width =5;
+rectangle.height=6;
+
+console.log(rectangle.width);
+console.log(rectangle.height);
+console.log(rectangle.area);
+
+// destructuring = extract values from arrays and objects then assign them to variable in a convenient way, [] = to perform array destructuring, {} = to perform object destructuring
+
+//swap the values of two variables
+let a = 1;
+let b = 2;
+
+[a,b] =  [b,a];
+
+console.log(a,b)
+
+//swap 2 elements in an array
+
+const colors = ["red", "green", "blue", "black", "white"];
+
+[colors[0], colors[4]] = [colors[4], colors[0]];
+
+console.log(colors);
+
+// swap array elements to variables
+
+const [firstColor,secondColor,thirdColor, ...extracolors] = colors
+
+console.log(firstColor)
+console.log(secondColor)
+console.log(thirdColor)
+console.log(extracolors)
+
+//extract values from objects
+
+const person1 = {
+    firstName22:  "Spongebob",
+    LastName22: "squarePants",
+    age22: 30,
+    job22: "Fry Cook"
+}
+const person2 = {
+    firstName22:  "Patrick",
+    LastName22: "Star",
+    age22: 34,
+}
+
+const {firstName22, LastName22,age22,job22="Unemployed"} = person2;
+
+console.log(firstName22);
+console.log(LastName22);
+console.log(age22);
+console.log(job22);
+
+//Destructure in function parament
+
+
+function displayPerson({firstName22, LastName22,age22,job22="Unemployed"}){
+    console.log(`name: ${firstName22}${LastName22} age: ${age22} Job: ${job22}`)
+}
+
+displayPerson(person1);
+
+// Nested objects = objects inside of other objects. allows you to represent more complex data structure child objects is enclosed by parent Object person{address{},ContactInfo{}} 
+
+const PERSOn = {
+    fullName: "Spongebob Squarepants",
+    age: 30,
+    isStudent: true,
+    hobbies: ["karate", "jellyfishing","cocking"],
+    address: {
+        street: "124 Conch St.",
+        city: "bikini bottom",
+        country: "Int. Waters",
+    },
+}
+
+console.log(PERSOn.fullName);
+console.log(PERSOn.age);
+console.log(PERSOn.isStudent);
+console.log(PERSOn.hobbies);
+console.log(PERSOn.hobbies[0]);
+console.log(PERSOn.hobbies[1]);
+console.log(PERSOn.hobbies[2]);
+console.log(PERSOn.address.street);
+console.log(PERSOn.address.city);
+console.log(PERSOn.address.country);
+
+for(const property in PERSOn.address){
+    console.log(PERSOn.address[property])
+}
+
+// Define the ADDress class first
+class ADDress{
+    constructor(street, city,country){
+        this.street = street;
+        this.city = city;
+        this.country = country;
+    }
+}
+
+// Then, define the PERSoN class with a different name for the rest parameter
+class PERSoN{
+    constructor(name,age, ...addressArguments){
+        this.name = name;
+        this.age = age;
+        this.ADDress = new ADDress(...addressArguments);
+    }
+}
+
+const Person1 = new PERSoN("Spongebob",30,"UrMom","UrDad","water")
+console.log(Person1);
+
+//sort() = method used to sort elements of an array in place. sorts elements as strings in lexicographic order, not alphabetical lexicographic = (alphabet + numbers + symbols) as string
